@@ -26,10 +26,13 @@ class ViewController: UIViewController {
     }
     
     @objc private func didTapButton() {
-        let vc = CoursesViewController()
+        let vc = CoursesViewController(dataFetchable: APICaller.shared)
         present(vc, animated: true)
     }
 
 
 }
 
+extension APICaller: DataFetchable {
+    
+}
